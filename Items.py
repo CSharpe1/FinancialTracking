@@ -5,14 +5,14 @@ import matplotlib.pyplot as plt
 def GenrateGraph():
     Calculate()
     plt.style.use('ggplot')
-    x = ['Income', 'Mortgague', 'Bills', 'Saving', 'Disposable']
-    money = [int(e1.get()), int(e2.get()), int(e3.get()), int(e4.get()), int(e1000.get())]
-    x_pos = [i for i, _ in enumerate(x)]
-    plt.bar(x_pos ,money ,  color='green')
-    plt.xlabel("Expence")
-    plt.ylabel("Money (£)")
-    plt.title("where your money goes")
-    plt.xticks(x_pos, x)
+    x       =   ['Income', 'Mortgague', 'Bills', 'Saving', 'Disposable']
+    money   =   [int(e1.get()), int(e2.get()), int(e3.get()), int(e4.get()), int(e1000.get())]
+    x_pos   =   [i for i, _ in enumerate(x)]
+    plt.bar(    x_pos,  money,  color   =   'green')
+    plt.xlabel( "Expence")
+    plt.ylabel( "Money (£)")
+    plt.title(  "where your money goes")
+    plt.xticks( x_pos,  x)
     plt.show()
     return
 
@@ -41,9 +41,6 @@ tk.Label(master, text="Bills").grid(row=2)
 tk.Label(master, text="Saving?").grid(row=3)
 tk.Label(master, text="Total;").grid(row=31, column = 0)
 
-
-
-
 e1 = tk.Entry(master)
 e2 = tk.Entry(master)
 e3 = tk.Entry(master)
@@ -56,15 +53,12 @@ e8 = tk.Entry(master)
 e9 = tk.Entry(master)
 e10 = tk.Entry(master)
 '''
-
 e1000 = tk.Entry(master)
-
 
 e1.grid(row=0, column=1)
 e2.grid(row=1, column=1)
 e3.grid(row=2, column=1)
 e4.grid(row=3, column=1)
-
 '''
 e5.grid(row=4, column=1)
 e6.grid(row=5, column=1)
@@ -75,12 +69,8 @@ e10.grid(row=9, column=1)
 '''
 e1000.grid(row=31, column=1)
 
-
-tk.Button(master, text='Quit', command=master.quit).grid(row=30, column=0, sticky=tk.W, pady=4)
-tk.Button(master, text='Graph', command=GenrateGraph).grid(row=30, column=1, sticky=tk.W, pady=4)
-tk.Button(master, text='Calculate', command=Calculate).grid(row=30, column=2, sticky=tk.W, pady=4)
-
-
-
+tk.Button(master, text='Quit',      command=master.quit).grid(  row=30, column=0, sticky=tk.W, pady=4)
+tk.Button(master, text='Graph',     command=GenrateGraph).grid( row=30, column=1, sticky=tk.W, pady=4)
+tk.Button(master, text='Calculate', command=Calculate).grid(    row=30, column=2, sticky=tk.W, pady=4)
 
 tk.mainloop()
